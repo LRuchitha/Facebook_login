@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Style Login and Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" id="loginContainer">
+        <div class="facebook-logo">
+            <h1>facebook</h1>
+        </div>
+        <div class="login-form">
+            <h2>Log in to Facebook</h2>
+            <form id="loginForm">
+                <input type="text" placeholder="Email address or phone number" id="loginEmail" required>
+                <input type="password" placeholder="Password" id="loginPassword" required>
+                <button type="submit">Log In</button>
+            </form>
+            <div class="forgotten">
+                <a href="#">Forgotten account?</a> · 
+                <a href="#" id="showSignup">Sign up for Facebook</a>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="signupContainer" style="display: none;">
+        <div class="signup-form">
+            <h2>Create a new account</h2>
+            <p>It's quick and easy.</p>
+            <form id="signup">
+                <label for="firstName">First name</label>
+                <input type="text" id="firstName" placeholder="First name" required>
+                <label for="lastName">Last name</label>
+                <input type="text" id="lastName" placeholder="Last name" required>
+                <label for="dob">Date of birth</label>
+                <div class="dob">
+                    <select id="day" required>
+                        <option value="">Day</option>
+                        <script>
+                            for (let i = 1; i <= 31; i++) {
+                                document.write('<option value="' + i + '">' + i + '</option>');
+                            }
+                        </script>
+                    </select>
+                    <select id="month" required>
+                        <option value="">Month</option>
+                        <option value="Jan">Jan</option>
+                        <option value="Feb">Feb</option>
+                        <option value="Mar">Mar</option>
+                        <option value="Apr">Apr</option>
+                        <option value="May">May</option>
+                        <option value="Jun">Jun</option>
+                        <option value="Jul">Jul</option>
+                        <option value="Aug">Aug</option>
+                        <option value="Sep">Sep</option>
+                        <option value="Oct">Oct</option>
+                        <option value="Nov">Nov</option>
+                        <option value="Dec">Dec</option>
+                    </select>
+                    <select id="year" required>
+                        <option value="">Year</option>
+                        <script>
+                            for (let i = 1950; i <= new Date().getFullYear(); i++) {
+                                document.write('<option value="' + i + '">' + i + '</option>');
+                            }
+                        </script>
+                    </select>
+                </div>
+                <label for="gender">Gender</label>
+                <div class="gender">
+                    <label><input type="radio" name="gender" value="female" required> Female</label>
+                    <label><input type="radio" name="gender" value="male" required> Male</label>
+                    <label><input type="radio" name="gender" value="custom" required> Custom</label>
+                </div>
+                <label for="email">Mobile number or email address</label>
+                <input type="email" id="email" placeholder="Mobile number or email address" required>
+                <label for="password">New password</label>
+                <input type="password" id="password" placeholder="New password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            <p><a href="#" id="showLogin">Already have an account?</a></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
